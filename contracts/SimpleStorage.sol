@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
-pragma solidity 0.8.19; //this is our solidity version range
+pragma solidity 0.8.24; //this is our solidity version range
 
 contract SimpleStorage {
-    uint256 internal myFavoriteNumber = 5;
+    uint256 internal myFavoriteNumber = 0;
 
     struct Person{
         uint256 favoriteNumber;
@@ -13,7 +13,8 @@ contract SimpleStorage {
 
     mapping(string => uint256) public nameToFavoriteNumber;
 
-    function store(uint256 _favoriteNumber) public {
+    //virtual means it is overridable
+    function store(uint256 _favoriteNumber) public virtual{
         myFavoriteNumber = _favoriteNumber;
     }
 
